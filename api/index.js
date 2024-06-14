@@ -4,6 +4,8 @@ import dotenv from 'dotenv'
 import morgan from 'morgan';
 import connectDB from './config/database.js';
 import authRoutes from '../api/routes/auth.route.js';
+import cors from 'cors'
+
 //config env
 dotenv.config();
 
@@ -19,6 +21,7 @@ connectDB();
 //middleware
 app.use(morgan('dev'))
 app.use(express.json())
+app.use(cors())
 
 //routes
 
